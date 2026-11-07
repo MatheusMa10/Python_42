@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from ex3.ex3.creature import Creature
+from ex3.creature import Creature
 
 
 class InvalidStrategyError(Exception):

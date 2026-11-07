@@ -1,4 +1,4 @@
-from ex3.ex3.creature import Creature
+from ex3.creature import Creature
 
 from ex4.battle_strategy import (
     BattleStrategy,

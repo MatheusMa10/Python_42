@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
+
 class DataProcessor(ABC):
     def __init__(self) -> None:
         super().__init__()
@@ -23,6 +24,7 @@ class DataProcessor(ABC):
         self.output_position += 1
         return rank, last_data
 
+
 class NumericProcessor(DataProcessor):
     def __init__(self) -> None:
         super().__init__()
@@ -36,20 +38,22 @@ class NumericProcessor(DataProcessor):
 
         if isinstance(data, list):
             for item in data:
-                if isinstance(item, bool) or not isinstance(item, (int, float)):
+                if isinstance(item, bool) \
+                   or not isinstance(item, (int, float)):
                     return False
             return True
         return False
-    
+
     def ingest(self, data: Any) -> None:
         if not self.validate(data):
             raise ValueError("Improper numeric data")
-        
+
         if isinstance(data, list):
             for i in data:
                 self.datas.append(str(i))
         else:
             self.datas.append(str(data))
+
 
 class TextProcessor(DataProcessor):
     def __init__(self) -> None:
@@ -75,6 +79,7 @@ class TextProcessor(DataProcessor):
                 self.datas.append(item)
         else:
             self.datas.append(data)
+
 
 class LogProcessor(DataProcessor):
     def __init__(self) -> None:
@@ -113,6 +118,7 @@ class LogProcessor(DataProcessor):
         level = log.get("log_level", "")
         message = log.get("log_message", "")
         return f"{level}: {message}"
+
 
 if __name__ == "__main__":
     print("=== Code Nexus - Data Processor ===")

@@ -1,5 +1,5 @@
-from ex3.ex3.creature import Creature
-from ex3.ex3.transform_capability import TransformCapability
+from ex3.creature import Creature
+from ex3.transform_capability import TransformCapability
 
 from ex4.battle_strategy import (
     BattleStrategy,

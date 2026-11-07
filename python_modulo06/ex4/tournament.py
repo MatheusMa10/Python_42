@@ -1,6 +1,6 @@
-from ex3.ex3.creature_factory import CreatureFactory
-from ex3.ex3.flame_factory import FlameFactory
-from ex3.ex3.transform_factory import TransformCreatureFactory
+from ex3.creature_factory import CreatureFactory
+from ex3.flame_factory import FlameFactory
+from ex3.transform_factory import TransformCreatureFactory
 
 from ex4.battle_strategy import (
     BattleStrategy,
